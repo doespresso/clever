@@ -1,0 +1,52 @@
+
+<?php $__env->startSection('main'); ?>
+<div class="section-wrapper">
+  <section class="page questions-page animated fadeInUpBig">
+      <div class="container">
+        <div class="row page-wrapper">
+          <div class="col-md-12">
+            <div class="content">
+              <div class="header">
+                <div class="row">
+                  <?php if (Session::get('errors')): ?>
+                    <?php $fire = ' attr-fire="fire"'?>
+                  <?php else: ?>
+                    <?php $fire=''?>
+                  <?php endif; ?>
+                  <div class="col-md-3 visible-md visible-lg" style="overflow: hidden;">
+                    <h1 class="list-show">Услуга</h1><h5 class="ask-show">Ваши контактные данные:</h5>
+                  </div>
+                  <div class="col-md-3"><h1 class="list-show">Вопрос/ответ</h1><h1 class="ask-show">Ваш вопрос</h1></div>
+                    <ul class="nav nav-pills" id="service-tabs">
+                      <li class="list-show"><a class="tab btn-go" href="#ask" data-toggle="tab"<?php echo $fire; ?>>Спросить</a></li>
+                      <li class="dropdown pull-right list-show">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <?php if(isset($cat)): ?>
+                          <?php echo $cat->name; ?><?php else: ?>Выбрать услугу<?php endif; ?><b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <?php echo $__env->make('menu.filterlist', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                          </ul>
+                        </li>
+                      <li class="ask-show"><a class="tab" href="#questions" data-toggle="tab">Вернуться к вопросам</a></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="body">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="questions">
+                    <?php echo $__env->make('questions.list', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                  </div>
+                  <div class="tab-pane" id="ask">
+                    <?php echo $__env->make('questions.create', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

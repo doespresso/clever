@@ -1,0 +1,9 @@
+<?php if($menulinks->count()>0): ?>
+<div class="form-group">
+<select name="service_id" class="form-control selectpicker" data-style="btn-primary" title="Выберите услугу">
+<?php foreach ($menulinks as $service): ?>
+<option value="<?php echo $service->id; ?>"><?php echo $service->name; ?></option>
+<?php endforeach; ?>
+</select>
+</div>
+<?php endif; ?>

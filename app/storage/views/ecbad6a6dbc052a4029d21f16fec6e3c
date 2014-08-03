@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="<?php if(isset($meta_description)): ?><?php echo $meta_description; ?><?php else: ?><?php echo Setting::get('home_description');; ?> <?php endif; ?>">
+  <meta name="keywords" content="<?php if(isset($meta_keywords)): ?><?php echo $meta_keywords; ?><?php else: ?><?php echo Setting::get('home_keywords');; ?> <?php endif; ?>">
+  <meta name="author" content="<?php echo Setting::get('home_title');; ?>">
+  <link href="<?php echo asset('assets/css/app.css'); ?>" rel="stylesheet">
+  <link rel="shortcut icon" href="<?php echo asset('favicon.png'); ?>">
+  <link rel="icon" type="image/png" href="<?php echo asset('assets/favicons/favicon_64.png'); ?>"/>
+  <link rel="apple-touch-icon" type="image/png" href="<?php echo asset('assets/favicons/favicon_57.png'); ?>" />
+  <link rel="apple-touch-icon" type="image/png" href="<?php echo asset('assets/favicons/favicon_114.png'); ?>" sizes="114x114" />
+  <link rel="apple-touch-icon" type="image/png" href="<?php echo asset('assets/favicons/favicon_72.png'); ?>" sizes="72x72" />
+  <link rel="apple-touch-icon" type="image/png" href="<?php echo asset('assets/favicons/favicon_144.png'); ?>" sizes="144x144" />
+  <script src="<?php echo asset('assets/js/modernizr.js'); ?>"></script>
+  <script src="<?php echo asset('assets/js/clever.js'); ?>"></script>
+  <title><?php if(isset($meta_title)): ?><?php echo $meta_title; ?><?php else: ?><?php echo Setting::get('home_title');; ?> <?php endif; ?></title>
+</head>
+<?php
+$printclass="";
+$printstyle="";
+if (isset($pagetype)){
+    $printclass=' class="'.$pagetype.'" ';
+    if($pagetype=='servicepage'){
+        $printstyle=' style="background-color:'.$service->color.'"';
+    }
+}
+?>
+<body <?php echo $printclass; ?><?php echo $printstyle; ?>name="top">
+<?php echo $__env->make('menu.topmenu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div id="body-wrapper">
+
+<div class="bar-fixed-top dark" id="topbar">
+  <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+       <ul role="navigation">
+         <li><a href="<?php echo asset('questions'); ?>">Вопрос/ответ</a></li>
+         <li class="visible-md visible-lg"><a href="<?php echo asset('comments'); ?>">Отзывы</a></li>
+         <li class="visible-md visible-lg"><a href="<?php echo asset('articles'); ?>">Статьи</a></li>
+         <li class="visible-md visible-lg"><a href="<?php echo asset('contacts'); ?>" data-toggle="modal">Контакты</a></li>
+       </ul>
+       <ul class="pull-right" role="usercabinet">
+         <?php if (Auth::check()): ?>
+         <?php
+           $user = Auth::user();
+           $messages = $user->messages()->Isunreaded();
+           $newmessages = $messages->count();
+           ?>
+         <li><a href="<?php echo asset('cabinet'); ?>"><?php echo $user->company; ?></a><?php if($newmessages>0): ?> <div class="new-messages animated bounce"><?php echo $newmessages; ?></div><?php endif; ?></li>
+         <?php else: ?>
+         <li><a href="<?php echo asset('cabinet'); ?>">Личный кабинет</a></li>
+         <?php endif; ?>
+       </ul>
+     </div>
+    </div>
+  </div>
+</div>
+  <?php if ($errors->any()): ?>
+  <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-unstyled">
+            <?php echo implode('', $errors->all('
+            <li class="error">:message</li>
+            ')); ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php endif; ?>
+  <?php if(Session::get('message')): ?>
+  <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"><span class="glyphicon glyphicon-ok"></span><?php echo Session::get('message'); ?></div>
+      </div>
+    </div>
+  </div>
+  <?php endif; ?>
+<?php echo $__env->yieldContent('main'); ?>
+<footer class="bar-fixed-bottom dark" id="footer" role="contactinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-2 col-md-3 col-lg-3">
+        <a class="adress-icon" href="<?php echo asset('contacts'); ?>"></a>
+        <a class="visible-md visible-lg" href="../contacts"><adress><?php echo Setting::get('adress');; ?></adress></a>
+      </div>
+      <div class="col-xs-3 col-sm-3 visible-sm visible-xs text-center"><a class="simple" href="<?php echo asset('specials'); ?>">АКЦИИ</a></div>
+      <div class="col-xs-2 col-md-3 col-lg-2 mobile-right">
+        <a class="tel-icon to-right" href="<?php echo asset('contacts'); ?>"></a>
+        <a class="visible-md visible-lg text-right" href="<?php echo asset('contacts'); ?>"><tel>+7 <?php echo Setting::get('tel1');; ?></tel><br/><tel><?php echo Setting::get('tel2');; ?></tel></a>
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-2 text-center"></div>
+      <a id="to-top" class="glyphicon glyphicon-arrow-up4" attr-ani="sm-scrl" href="#top"></a>
+      <div class="col-xs-3 col-sm-3 visible-sm visible-xs text-center"><a class="simple" href="<?php echo asset('comments'); ?>">ОТЗЫВЫ</a></div>
+      <div class="col-md-3 col-md-offset-2 col-lg-offset-2 col-lg-3 visible-md visible-lg">
+        <a class="copyright-icon" href="<?php echo asset('contacts'); ?>"></a>
+        <a href="<?php echo asset('contacts'); ?>"><copyright><?php echo Setting::get('copyright');; ?></copyright></a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,394 @@
+//
+// Glyphicons for Bootstrap
+//
+// Since icons are fonts, they can be placed anywhere text is placed and are
+// thus automatically sized to match the surrounding child. To use, create an
+// inline element with the appropriate classes, like so:
+//
+// <a href="#"><span class="glyphicon glyphicon-star"></span> Star</a>
+
+// Import the fonts
+@font-face {
+  font-family: 'Glyphicons';
+  src: url('@{icon-font-path}@{icon-font-name}.eot');
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+       url('@{icon-font-path}@{icon-font-name}.svg#glyphicons-halflingsregular') format('svg'),
+  url('@{icon-font-path}@{icon-font-name}.woff') format('woff');
+}
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('/assets/fonts/proxima_nova_bold-webfont.eot');
+    src: url('/assets/fonts/proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proxima_nova_bold-webfont.woff') format('woff'),
+         url('/assets/fonts/proxima_nova_bold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proxima_nova_bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('/assets/fonts/proxima_nova_regular-webfont.eot');
+    src: url('/assets/fonts/proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/proxima_nova_regular-webfont.woff') format('woff'),
+         url('/assets/fonts/proxima_nova_regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/proxima_nova_regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+// Catchall baseclass
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons';
+  font-style: normal;
+  font-weight: normal!important;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+[class^="glyphicon-"], [class*=" glyphicon-"] {
+	font-family: 'Glyphicons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-chat:before {
+	content: "\e600";
+}
+.glyphicon-chat-alt-stroke:before {
+	content: "\e601";
+}
+.glyphicon-chat-alt-fill:before {
+	content: "\e602";
+}
+.glyphicon-comment-alt1-stroke:before {
+	content: "\e603";
+}
+.glyphicon-comment:before {
+	content: "\e604";
+}
+.glyphicon-comment-stroke:before {
+	content: "\e605";
+}
+.glyphicon-comment-fill:before {
+	content: "\e606";
+}
+.glyphicon-comment-alt2-stroke:before {
+	content: "\e607";
+}
+.glyphicon-comment-alt2-fill:before {
+	content: "\e608";
+}
+.glyphicon-checkmark:before {
+	content: "\e609";
+}
+.glyphicon-check-alt:before {
+	content: "\e60a";
+}
+.glyphicon-x:before {
+	content: "\e60b";
+}
+.glyphicon-x-altx-alt:before {
+	content: "\e60c";
+}
+.glyphicon-denied:before {
+	content: "\e60d";
+}
+.glyphicon-cursor:before {
+	content: "\e60e";
+}
+.glyphicon-mail:before {
+	content: "\e60f";
+}
+.glyphicon-plus:before {
+	content: "\e610";
+}
+.glyphicon-plus-alt:before {
+	content: "\e611";
+}
+.glyphicon-minus:before {
+	content: "\e612";
+}
+.glyphicon-minus-alt:before {
+	content: "\e613";
+}
+.glyphicon-key-stroke:before {
+	content: "\e614";
+}
+.glyphicon-key-fill:before {
+	content: "\e615";
+}
+.glyphicon-new-window:before {
+	content: "\e616";
+}
+.glyphicon-lightbulb:before {
+	content: "\e617";
+}
+.glyphicon-spin-alt:before {
+	content: "\e618";
+}
+.glyphicon-spin:before {
+	content: "\e619";
+}
+.glyphicon-undo:before {
+	content: "\e61a";
+}
+.glyphicon-reload:before {
+	content: "\e61b";
+}
+.glyphicon-reload-alt:before {
+	content: "\e61c";
+}
+.glyphicon-loop:before {
+	content: "\e61d";
+}
+.glyphicon-loop-alt1:before {
+	content: "\e61e";
+}
+.glyphicon-loop-alt2:before {
+	content: "\e61f";
+}
+.glyphicon-loop-alt3:before {
+	content: "\e620";
+}
+.glyphicon-loop-alt4:before {
+	content: "\e621";
+}
+.glyphicon-transfer:before {
+	content: "\e622";
+}
+.glyphicon-move-vertical:before {
+	content: "\e623";
+}
+.glyphicon-move-vertical-alt1:before {
+	content: "\e624";
+}
+.glyphicon-move-horizontal:before {
+	content: "\e625";
+}
+.glyphicon-move-horizontal-alt1:before {
+	content: "\e626";
+}
+.glyphicon-iphone:before {
+	content: "\e627";
+}
+.glyphicon-folder-stroke:before {
+	content: "\e628";
+}
+.glyphicon-folder-fill:before {
+	content: "\e629";
+}
+.glyphicon-at:before {
+	content: "\e62a";
+}
+.glyphicon-info:before {
+	content: "\e62b";
+}
+.glyphicon-question-mark:before {
+	content: "\e62c";
+}
+.glyphicon-left-quote:before {
+	content: "\e62d";
+}
+.glyphicon-right-quote:before {
+	content: "\e62e";
+}
+.glyphicon-book-alt2:before {
+	content: "\e62f";
+}
+.glyphicon-pen:before {
+	content: "\e630";
+}
+.glyphicon-pen-alt-stroke:before {
+	content: "\e631";
+}
+.glyphicon-pen-alt-fill:before {
+	content: "\e632";
+}
+.glyphicon-user:before {
+	content: "\e633";
+}
+.glyphicon-eye:before {
+	content: "\e634";
+}
+.glyphicon-clock:before {
+	content: "\e635";
+}
+.glyphicon-lock-stroke:before {
+	content: "\e636";
+}
+.glyphicon-lock-fill:before {
+	content: "\e637";
+}
+.glyphicon-unlock-stroke:before {
+	content: "\e638";
+}
+.glyphicon-unlock-fill:before {
+	content: "\e639";
+}
+.glyphicon-map-pin-stroke:before {
+	content: "\e63a";
+}
+.glyphicon-map-pin-fill:before {
+	content: "\e63b";
+}
+.glyphicon-map-pin-alt:before {
+	content: "\e63c";
+}
+.glyphicon-star:before {
+	content: "\e63d";
+}
+.glyphicon-eject:before {
+	content: "\e63e";
+}
+.glyphicon-document-alt-stroke:before {
+	content: "\e63f";
+}
+.glyphicon-document-alt-fill:before {
+	content: "\e640";
+}
+.glyphicon-login:before {
+	content: "\e641";
+}
+.glyphicon-logout:before {
+	content: "\e642";
+}
+.glyphicon-user2:before {
+	content: "\e643";
+}
+.glyphicon-users:before {
+	content: "\e644";
+}
+.glyphicon-user-add:before {
+	content: "\e645";
+}
+.glyphicon-vcard:before {
+	content: "\e646";
+}
+.glyphicon-location:before {
+	content: "\e647";
+}
+.glyphicon-mobile:before {
+	content: "\e648";
+}
+.glyphicon-phone:before {
+	content: "\e649";
+}
+.glyphicon-skype:before {
+	content: "\e64a";
+}
+.glyphicon-facebook:before {
+	content: "\e64b";
+}
+.glyphicon-skype2:before {
+	content: "\e64c";
+}
+.glyphicon-vk:before {
+	content: "\e64d";
+}
+.glyphicon-paperplane:before {
+	content: "\e64e";
+}
+.glyphicon-key:before {
+	content: "\e64f";
+}
+.glyphicon-info2:before {
+	content: "\e650";
+}
+.glyphicon-help:before {
+	content: "\e651";
+}
+.glyphicon-question:before {
+	content: "\e652";
+}
+.glyphicon-info3:before {
+	content: "\e653";
+}
+.glyphicon-arrow-up:before {
+	content: "\e654";
+}
+.glyphicon-arrow-down:before {
+	content: "\e655";
+}
+.glyphicon-arrow-right:before {
+	content: "\e656";
+}
+.glyphicon-arrow-left:before {
+	content: "\e657";
+}
+.glyphicon-arrow-left2:before {
+	content: "\e658";
+}
+.glyphicon-arrow-down2:before {
+	content: "\e659";
+}
+.glyphicon-arrow-up2:before {
+	content: "\e65a";
+}
+.glyphicon-arrow-right2:before {
+	content: "\e65b";
+}
+.glyphicon-arrow-left3:before {
+	content: "\e65c";
+}
+.glyphicon-arrow-down3:before {
+	content: "\e65d";
+}
+.glyphicon-arrow-up3:before {
+	content: "\e65e";
+}
+.glyphicon-arrow-right3:before {
+	content: "\e65f";
+}
+.glyphicon-arrow-left4:before {
+	content: "\e660";
+}
+.glyphicon-arrow-down4:before {
+	content: "\e661";
+}
+.glyphicon-arrow-up4:before {
+	content: "\e662";
+}
+.glyphicon-uniE663:before {
+	content: "\e663";
+}
+.glyphicon-menu:before {
+	content: "\e664";
+}
+.glyphicon-ellipsis:before {
+	content: "\e665";
+}
+.glyphicon-dots:before {
+	content: "\e666";
+}
+.glyphicon-dot:before {
+	content: "\e667";
+}
+.glyphicon-plus2:before {
+	content: "\e668";
+}
+.glyphicon-minus2:before {
+	content: "\e669";
+}
+.glyphicon-layout:before {
+	content: "\e66a";
+}
+.glyphicon-clock2:before {
+	content: "\e66b";
+}
+.glyphicon-copy:before {
+	content: "\e66c";
+}
+.glyphicon-teltube:before {
+	content: "\e66d";
+}

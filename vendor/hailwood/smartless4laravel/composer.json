@@ -1,0 +1,32 @@
+{
+    "name": "hailwood/smartless4laravel",
+    "description": "An advanced LESS PHP compiler package for Laravel4 based on the LESSisMore L3 bundle.",
+    "homepage": "https://bitbucket.org/hailwoodnz/smartless4laravel",
+    "keywords": ["laravel", "illuminate", "less", "assets", "css", "php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Hailwood",
+            "email": "me@matthewhailwood.co.nz"
+        }
+    ],
+    "support": {
+        "email": "me@matthewhailwood.co.nz",
+        "issues": "https://bitbucket.org/hailwoodnz/smartless4laravel/issues",
+        "source": "https://bitbucket.org/hailwoodnz/smartless4laravel/src"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "leafo/lessphp": ">=0.3.8"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Hailwood\\Smartless4laravel": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

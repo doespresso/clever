@@ -1,0 +1,38 @@
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  z-index:10000;
+}
+
+.pace.pace-inactive .pace-progress {
+  display: none;
+}
+
+.pace .pace-progress {
+  position: absolute;
+  z-index: 20000;
+  top: 0;
+  right: 0;
+  height: 5rem;
+  width: 5rem;
+}
+
+.pace .pace-progress:after {
+  display: block;
+  position: fixed;
+  top: 5%;
+  left: 10%;
+  content: attr(data-progress-text);
+  font-family: Rembo,"Helvetica Neue", sans-serif;
+  font-weight: normal;
+  font-size: 20rem;
+  @media (min-width: @grid-float-breakpoint) {
+    font-size: 40rem;
+  }
+  line-height: 1;
+  text-align: right;
+  color: rgba(255,255,255,0.4);
+}
