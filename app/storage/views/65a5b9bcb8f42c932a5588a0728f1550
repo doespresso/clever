@@ -1,0 +1,26 @@
+<div class="navbar navbar-default navbar-fixed-top" id="topnav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<?php echo route('home'); ?>"></a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right" role="navigation">
+        <?php foreach ($menulinks as $link): ?>
+        <?php if (isset($pagetype) && $pagetype == 'homepage'): ?>
+        <li><a href="#<?php echo $link->alias; ?>"><?php echo $link->name; ?></a></li>
+        <?php else: ?>
+            <?php if(isset($service) && ($service->alias == $link->alias)): ?>
+            <li class="active"><a href="<?php echo asset('services'); ?>/<?php echo $link->alias; ?>"><?php echo $link->name; ?></a></li>
+            <?php else: ?>
+            <li><a href="<?php echo asset('services'); ?>/<?php echo $link->alias; ?>"><?php echo $link->name; ?></a></li>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>

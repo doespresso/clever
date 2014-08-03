@@ -26,8 +26,8 @@ return array(
 	|
 	*/
 
-	'url' => 'http://clever-russia.com',
-    'asset_url' => 'http://clever-russia.com/assets',
+	'url' => 'http://'.$_SERVER['HTTP_HOST'],
+    'asset_url' => 'http://'.$_SERVER['HTTP_HOST'].'/assets',
 
 	/*
 	|--------------------------------------------------------------------------
