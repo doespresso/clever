@@ -54,7 +54,7 @@ return array(
     'menu' => array(
    		'Настройки' => array('settings.site'),
    		'Статьи' => array('categories','articles'),
-        'users','services','messages','questions','comments'
+        'users','services','messages','questions','comments','orders'
    	),
 
 	/**

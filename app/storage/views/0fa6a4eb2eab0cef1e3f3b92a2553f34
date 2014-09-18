@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <h1><?php echo $d['title']; ?></h1>
+        <?php $fields = $d['fields'];?>
+        <p class="lead"><?php echo $d['description']; ?></p>
+        <div class="doc-form">
+            <?php echo Form::open(array('id'=>'order_params','url' => 'order','method' => 'post','role' => 'form')); ?>
+            <?php foreach ($fields as $key => $f): ?>
+            <?php if(isset($f['type']) && $f['type']=='text'): ?>
+            <div class="form-group">
+                <?php echo Form::text($key, null, array('class'=>'form-control input-block','placeholder'=>$f["title"])); ?>
+            </div>
+            <?php else: ?>
+            <div class="form-group">
+                <select>
+                    <?php foreach ($f as $option): ?>
+                    <option><?php echo $option['title']; ?> - <?php echo $option['price']; ?> руб</option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <?php endif; ?>
+            <?php endforeach; ?>
+            <hr/>
+            <div class="form-group">
+                <?php echo Form::submit('Продолжить',$attributes = array('class'=>'btn btn-primary pull-right','id'=>'order_next')); ?>
+            </div>
+
+            <?php echo Form::close(); ?>
+        </div>
+    </div>
+</div>

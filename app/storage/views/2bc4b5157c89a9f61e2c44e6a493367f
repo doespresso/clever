@@ -1,0 +1,5 @@
+<?php foreach ($menulinks as $link): ?>
+<li><a href="<?php echo route('questions.category'); ?>/<?php echo $link->id; ?>"><?php echo $link->name; ?></a></li>
+<?php endforeach; ?>
+<!--<li class="divider"></li>-->
+<li><a href="<?php echo asset('questions'); ?>">Все вопросы</a></li>

@@ -1,0 +1,32 @@
+<?php $__env->startSection('main'); ?>
+<div class="section-wrapper no-bottom-pad">
+  <section class="site-panel no-bottom-pad animated bounceIn">
+    <div class="container">
+      <div class="row page-wrapper">
+        <div class="col-md-4">
+          <h1>Группа компаний CLEVER</h1>
+          <p><?php echo Setting::get('ooo');; ?></p>
+        </div>
+        <div class="col-md-3">
+          <span class="glyphicon glyphicon-iphone bigico"></span><br />
+          <div class="contact-phones">
+            <h3>+7 <?php echo Setting::get('tel1');; ?><br />+7 <?php echo Setting::get('tel2');; ?></h3>
+            <p><?php echo Setting::get('time');; ?></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <span class="glyphicon glyphicon-map-pin-fill bigico"></span><br />
+          <h3><?php echo Setting::get('adress');; ?></h3>
+          <p><?php echo Setting::get('time_office');; ?></p>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+      </div>
+    </div>
+    <div class="contact-map"><?php echo Setting::get('map');; ?></div>
+  </section>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

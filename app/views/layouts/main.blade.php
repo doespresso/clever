@@ -64,6 +64,9 @@ if (isset($pagetype)){
       <div class="row">
         <div class="col-md-12">
           <ul class="list-unstyled">
+            @if(Session::get('error-message'))
+            <b>{{Session::get('error-message')}}</b>
+            @endif
             {{ implode('', $errors->all('
             <li class="error">:message</li>
             ')) }}
@@ -107,5 +110,7 @@ if (isset($pagetype)){
   </div>
 </footer>
 </div>
+<div id="doc-form-holder"></div>
+<div id="doc-form" class="animated fadeInUpBig"></div>
 </body>
 </html>

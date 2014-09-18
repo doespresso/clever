@@ -128,6 +128,51 @@ function getWsize(){
 
 jQuery(function ($) {
 
+    $('button.startorder').on('click',function(){
+        var order_type = $(this).attr('data-ordertype');
+        console.log('start', order_type);
+        $("#doc-form-holder").fadeIn(10);
+        $("#doc-form").css('display','block');
+        $("#doc-form").empty();
+
+        $.ajax({
+            type:'GET',
+            url: '/order/create',
+            data:'type='+order_type,
+            success:function(data){
+                console.log(data);
+                $(data).appendTo('#doc-form');
+                $("#order_params").submit(function(event){
+                    event.preventDefault();
+                    console.log("submit next");
+                    $.ajax({
+                        type:'POST',
+                        url: '/order',
+                        data:'type='+order_type,
+                        success:function(data){
+                            console.log(data);
+                            $('#doc-form').empty();
+                            $(data).appendTo('#doc-form');
+
+                        }
+                    });
+                });
+            }
+        });
+
+
+    });
+
+    $("#doc-form-holder").on('click',function(){
+       $(this).fadeOut(0);
+        $("#doc-form").css('display','none');
+    });
+
+
+
+
+
+
     $('.homepage .navbar-nav').onePageNav({
         currentClass: 'active',
         changeHash: false,
@@ -224,7 +269,7 @@ $(window).on("resize",function(){
 $(document).ready(function(){
     Path.map("#tab-products").to(function(){$("#tab-products").tab('show');});
     Path.map("#tab-solutions").to(function(){$("#tab-solutions").tab('show');});
-    Path.map("#tab-specials").to(function(){$("#tab-specials").tab('show');});
+    Path.map("#tab-order").to(function(){$("#tab-order").tab('show');});
     Path.listen();
     $("#homenav, .page, .site-panel").fullHeight();
     console.log("DR");

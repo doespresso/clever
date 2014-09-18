@@ -1,2 +1,35 @@
 @import "bootstrap3/bootstrap.less";
 @import "bootstrap3/my/preloader.less";
+
+
+#doc-form-holder{
+  position:fixed;
+  z-index:9999;
+  left:0;
+  top:0;
+  display:block;
+  width:100%;
+  height:100%;
+  background:#fff;
+  background:rgba(red(@brand-primary),green(@brand-primary),blue(@brand-primary),0.5);
+  padding:@gap*2;
+  display:none;
+}
+#doc-form{
+  position:fixed;
+  left:5%;
+  top:5%;
+  width:90%;
+  height:90%;
+  background:#fff;
+  padding:@gap;
+  z-index:10000;
+  display:none;
+}
+
+
+.doc-form{
+  input[type='text']{
+    border-bottom: 2px @brand-primary solid;
+  }
+}

@@ -18,6 +18,9 @@ Route::get('/contacts', function(){
     return View::make('contacts.index')->with('pagetype','contentpage');
 });
 
+//Route::get('zakazegrp', array('as' => 'egrp', 'uses' => 'OrdersController@index'));
+//Route::post('zakazegrp', array('as' => 'egrpresult', 'uses' => 'OrdersController@store'));
+
 Route::get('logout', array('as' => 'logout', 'uses' => 'LoginController@logout'));
 Route::get('test', array('as' => 'tester', function(){
     if (Auth::check())
@@ -37,7 +40,11 @@ Route::get('articles/', array('uses'=>'ArticlesController@index','as' => 'articl
 Route::get('articles/{id?}', array('uses'=>'ArticlesController@show','as' => 'articles.show'));
 Route::get('articles/cat/{id?}', array('uses'=>'ArticlesController@category','as' => 'articles.category'));
 
+Route::get('order/create', array('uses'=>'OrderController@create','as'=>'order.start'));
+Route::post('order', array('uses'=>'OrderController@store','as'=>'order.save'));
 
+
+//Route::resource('order', 'OrderController');
 Route::resource('roles', 'RolesController');
 Route::resource('users', 'UsersController');
 Route::resource('services', 'ServicesController');
@@ -47,6 +54,7 @@ Route::resource('messages', 'MessagesController');
 Route::resource('questions', 'QuestionsController');
 Route::resource('categories', 'CategoriesController');
 Route::resource('articles', 'ArticlesController');
+
 
 
 
@@ -100,8 +108,6 @@ App::missing(function($exception)
 {
     return Response::view('errors.404', array(), 404);
 });
-
-
 
 
 

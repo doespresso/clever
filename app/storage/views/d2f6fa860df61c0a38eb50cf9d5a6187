@@ -1,0 +1,18 @@
+<?php if ($articles->count()): ?>
+<ul class="list-unstyled articles">
+  <?php foreach ($articles as $article): ?>
+  <li>
+    <div class="row">
+      <div class="col-md-3">
+        <h3 class="category" role="category"><a href="<?php echo asset('/articles/cat'); ?>/<?php echo $article->category->alias; ?>"><?php echo $article->category->name; ?></a></h3>
+      </div>
+      <div class="col-md-9">
+        <h3 role="title"><a href="<?php echo asset('articles'); ?>/<?php echo $article->alias; ?>"><?php echo $article->name; ?></a></h3>
+        <p class="announce" role="announce"><?php echo $article->announce; ?> <a href="<?php echo asset('articles'); ?>/<?php echo $article->alias; ?>">Читать</a></p>
+      </div>
+    </div>
+  </li>
+  <?php endforeach; ?>
+</ul>
+<?php echo $articles->links();; ?>
+<?php endif; ?>

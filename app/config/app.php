@@ -26,8 +26,10 @@ return array(
 	|
 	*/
 
-	'url' => 'http://'.$_SERVER['HTTP_HOST'],
-    'asset_url' => 'http://'.$_SERVER['HTTP_HOST'].'/assets',
+//	'url' => 'http://'.$_SERVER['HTTP_HOST'],
+	'url' => 'localhost',
+//    'asset_url' => 'http://'.$_SERVER['HTTP_HOST'].'/assets',
+    'asset_url' => 'localhost/assets',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -18,16 +18,17 @@
                     <ul class="nav nav-pills" id="service-tabs">
                       <li class="active"><a id="tab-products" href="#products" data-toggle="tab">Продукты</a></li>
                       <li><a id="tab-solutions" href="#solutions" data-toggle="tab">Решения</a></li>
-                      <!--<li><a id="tab-specials" href="#specials" data-toggle="tab">Акции</a></li>-->
                     </ul>
 
                 </div>
               </div>
               <div class="body">
+                  @if($service->show_order)
+                  @include('services.orderlist')
+                  @endif
                 <div class="tab-content">
                   <div class="tab-pane active" id="products">{{$service->products}}</div>
                   <div class="tab-pane" id="solutions">{{$service->solutions}}</div>
-                  <!--<div class="tab-pane" id="specials">{{$service->specials}}</div>-->
                 </div>
               </div>
             </div>

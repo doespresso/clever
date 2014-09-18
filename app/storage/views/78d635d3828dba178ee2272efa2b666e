@@ -1,0 +1,18 @@
+<?php if ($comments->count()): ?>
+<ul class="list-unstyled comments">
+  <?php foreach ($comments as $comment): ?>
+  <li>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="author" role="author"><?php echo $comment->user->company; ?></div>
+<!--        <?php if($comment->service): ?><p><a class="to-service" href="../services/<?php echo $comment->service->alias; ?>"><span class="service-link label" style="background-color: <?php echo $comment->service->color; ?>;"><?php echo $comment->service->name; ?></span></a></p><?php endif; ?>-->
+      </div>
+      <div class="col-md-9">
+        <p role="comment" id="#q<?php echo $comment->id; ?>"><?php echo $comment->comment; ?></p>
+      </div>
+    </div>
+  </li>
+  <?php endforeach; ?>
+</ul>
+<?php echo $comments->links();; ?>
+<?php endif; ?>

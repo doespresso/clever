@@ -1,0 +1,18 @@
+<?php if ($questions->count()): ?>
+<ul class="list-unstyled questions <?php if(isset($cat)): ?> filtered<?php endif; ?>">
+  <?php foreach ($questions as $question): ?>
+  <li>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="service-cell"><?php echo $question->service->name; ?></div>
+      </div>
+      <div class="col-md-9">
+        <div class="question-cell"><p role="question"><?php echo $question->question; ?> <a class="show-answer" data-toggle="collapse" href="#q<?php echo $question->id; ?>">Ответ <span>x</span></a></p>
+        <div id="q<?php echo $question->id; ?>" class="panel-collapse collapse"><p role="answer active"><?php echo $question->answer; ?></p></div></div>
+      </div>
+    </div>
+  </li>
+  <?php endforeach; ?>
+</ul>
+<?php echo $questions->links();; ?>
+<?php endif; ?>

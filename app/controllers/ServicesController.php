@@ -39,20 +39,20 @@ class ServicesController extends BaseController {
 	 */
 	public function store()
 	{
-		$input = Input::all();
-		$validation = Validator::make($input, Service::$rules);
-
-		if ($validation->passes())
-		{
-			$this->service->create($input);
-
-			return Redirect::route('services.index');
-		}
-
-		return Redirect::route('services.create')
-			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+//		$input = Input::all();
+//		$validation = Validator::make($input, Service::$rules);
+//
+//		if ($validation->passes())
+//		{
+//			$this->service->create($input);
+//
+//			return Redirect::route('services.index');
+//		}
+//
+//		return Redirect::route('services.create')
+//			->withInput()
+//			->withErrors($validation)
+//			->with('message', 'There were validation errors.');
 	}
 
 	/**

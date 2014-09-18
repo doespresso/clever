@@ -87,9 +87,9 @@ return array(
             'title' => 'Решения',
             'type' => 'wysiwyg',
         ),
-        'specials' => array(
-            'title' => 'Акции',
-            'type' => 'wysiwyg',
+        'show_order' => array(
+            'title' => 'Интегрировать формы заказа Документов',
+            'type' => 'bool'
         ),
         'color' => array(
             'type' => 'color',

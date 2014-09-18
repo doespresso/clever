@@ -13,7 +13,7 @@ yepnope({
     callback:{
         'pace':function (url, result, key) {
             Pace.start({
-                    document:false
+                    document:true
                 }
             );
         },
