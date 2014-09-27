@@ -11,7 +11,8 @@ $doctypes = Setting::get('docs');
                 <p><?php echo $doctype['description']; ?></p>
             </div>
             <div class="col-md-3">
-                <button id="getegrp" data-ordertype="<?php echo $key; ?>" class="btn btn-block btn-primary startorder">Получить</button>
+                <span class="price-from">от <?php echo $doctype['price_from']; ?> руб.</span>
+                <button id="getegrp" data-ordertype="<?php echo $key; ?>" class="btn btn-block btn-order startorder">получить</button>
             </div>
         </div>
     </div>

@@ -16,7 +16,8 @@ class OrderController extends \BaseController
         Setting::set('docs', array(
             'egrul' => [
                 'title' => 'Выписка ЕГРЮЛ',
-                'description' => 'Получите свежую выписку из ЕГРЮЛ по организации ONLINE/с доставкой.<br/><b>от 399 рублей</b>',
+                'description' => 'Закажите свежую выписку из ЕГРЮЛ ONLINE/с доставкой.',
+                'price_from' => '399',
                 'fields' => [
                     'name' => ['title' => 'Наименование организации', 'type' => 'text'],
                     'inn' => ['title' => 'ИНН', 'type' => 'text'],
@@ -37,10 +38,11 @@ class OrderController extends \BaseController
             ],
             'egrp' => [
                 'title' => 'Выписка ЕГРП',
-                'description' => 'Получите свежую выписку из ЕГРП по организации ONLINE/с доставкой.<br/><b>от 399 рублей</b>',
+                'description' => 'Закажите свежую выписку из ЕГРП ONLINE/с доставкой',
+                'price_from' => '399',
                 'fields' => [
                     'address' => ['title' => 'Адрес', 'type' => 'text'],
-                    'number' => ['title' => 'Кадастровый или условный номер', 'type' => 'text'],
+                    'number' => ['title' => 'Номер', 'type' => 'text'],
                     'person' => ['title' => 'Контактное лицо', 'type' => 'text'],
                     'var' => [
                         'title' => 'Сроки',
@@ -57,7 +59,8 @@ class OrderController extends \BaseController
             ],
             'kp' => [
                 'title' => 'Кадастровый паспорт',
-                'description' => 'Получите Кадастровый паспорт объекта с доставкой.<br/><b>от 2500 рублей</b>',
+                'description' => 'Закажите Кадастровый паспорт объекта с доставкой.',
+                'price_from' => '2500',
                 'fields' => [
                     'address' => ['title' => 'Адрес', 'type' => 'text'],
                     'number' => ['title' => 'Кадастровый или условный номер', 'type' => 'text'],
