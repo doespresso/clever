@@ -215,7 +215,7 @@ jQuery(function ($) {
                                 if (data['status'] == 'ok') {
                                     $("#doc_contacts,#order_btn_edit").addClass("hidden");
                                     $("#order_btn_exit").removeClass("hidden");
-                                    $("#doc_result_params").append('<p class="lead">Заказ принят. Номер вашего заказа <span class"order_num">'+data['order_id']+'</span></p>');
+                                    $("#doc_result_params").append('<p class="lead">Заказ принят. Номер вашего заказа <span class"order_num">' + data['order_id'] + '</span></p>');
                                 }
                             }
                         });

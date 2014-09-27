@@ -3,23 +3,12 @@
 class OrderController extends \BaseController
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-
 
     public function index()
     {
         echo "index";
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
 
     public function settings()
     {
@@ -27,7 +16,7 @@ class OrderController extends \BaseController
         Setting::set('docs', array(
             'egrul' => [
                 'title' => 'Выписка ЕГРЮЛ',
-                'description' => 'Выписка ЕГРЮЛ',
+                'description' => 'Получите свежую выписку из ЕГРЮЛ по организации ONLINE/с доставкой.<br/><b>от 399 рублей</b>',
                 'fields' => [
                     'name' => ['title' => 'Наименование организации', 'type' => 'text'],
                     'inn' => ['title' => 'ИНН', 'type' => 'text'],
@@ -36,30 +25,48 @@ class OrderController extends \BaseController
                     'var' => [
                         'title' => 'Сроки',
                         'par' => [
-                            ['title' => 'Стандартная 2-4 дня', 'price' => '5000'],
-                            ['title' => 'Стандартная 1-4 дня', 'price' => '2000'],
-                            ['title' => 'Стандартная 3-4 дня', 'price' => '3000'],
-                            ['title' => 'Стандартная 4-4 дня', 'price' => '4000'],
-                            ['title' => 'Стандартная 5-4 дня', 'price' => '5000'],
+                            ['title' => 'по Москве и МО - 5 дней', 'price' => '1500'],
+                            ['title' => 'по Москве и МО - 1 день', 'price' => '3000'],
+                            ['title' => 'по Москве и МО - 3 дня', 'price' => '2300'],
+                            ['title' => 'по Москве и МО - 10 дней', 'price' => '600'],
+                            ['title' => 'по РФ - 1-7 дней', 'price' => '4000'],
+                            ['title' => 'информационная выписка электронная (РФ) - 1 день', 'price' => '399'],
                         ]
                     ],
                 ]
             ],
             'egrp' => [
                 'title' => 'Выписка ЕГРП',
-                'description' => 'Выписка ЕГРП',
+                'description' => 'Получите свежую выписку из ЕГРП по организации ONLINE/с доставкой.<br/><b>от 399 рублей</b>',
                 'fields' => [
                     'address' => ['title' => 'Адрес', 'type' => 'text'],
                     'number' => ['title' => 'Кадастровый или условный номер', 'type' => 'text'],
-                    'person' => ['title' => 'ФИО', 'type' => 'text'],
+                    'person' => ['title' => 'Контактное лицо', 'type' => 'text'],
                     'var' => [
                         'title' => 'Сроки',
                         'par' => [
-                            ['title' => 'Стандартная 2-4 дня', 'price' => '5000'],
-                            ['title' => 'Стандартная 1-4 дня', 'price' => '2000'],
-                            ['title' => 'Стандартная 3-4 дня', 'price' => '3000'],
-                            ['title' => 'Стандартная 4-4 дня', 'price' => '4000'],
-                            ['title' => 'Стандартная 5-4 дня', 'price' => '5000'],
+                            ['title' => 'по Москве и МО - 5 дней', 'price' => '1500'],
+                            ['title' => 'по Москве и МО - 1 день', 'price' => '3000'],
+                            ['title' => 'по Москве и МО - 3 дня', 'price' => '2300'],
+                            ['title' => 'по Москве и МО - 10 дней', 'price' => '600'],
+                            ['title' => 'по РФ - 1-7 дней', 'price' => '4000'],
+                            ['title' => 'информационная выписка электронная (РФ) - 1 день', 'price' => '399'],
+                        ]
+                    ],
+                ]
+            ],
+            'kp' => [
+                'title' => 'Кадастровый паспорт',
+                'description' => 'Получите Кадастровый паспорт объекта с доставкой.<br/><b>от 2500 рублей</b>',
+                'fields' => [
+                    'address' => ['title' => 'Адрес', 'type' => 'text'],
+                    'number' => ['title' => 'Кадастровый или условный номер', 'type' => 'text'],
+                    'person' => ['title' => 'Контактное лицо', 'type' => 'text'],
+                    'var' => [
+                        'title' => 'Сроки',
+                        'par' => [
+                            ['title' => 'Стандартная 5-7 дней', 'price' => '2500'],
+                            ['title' => 'Срочная 1-2 дня', 'price' => '8500'],
                         ]
                     ],
                 ]
@@ -167,12 +174,7 @@ class OrderController extends \BaseController
         return Response::json(array('status' => 'error'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
+
 //    public function show($id)
 //    {
 //        //
