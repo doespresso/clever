@@ -1,0 +1,9 @@
+<h3>Уважаемые представители <?php echo $user->company; ?>!</h3>
+<h3>Благодарим Вас за регистрацию в системе <?php echo Setting::get('site_name'); ?></h3>
+<p>Ваше имя пользователя для входа:  <b><?php echo $user->email; ?></b><br/>
+Пароль, указанный Вами при регистрации:  <b><?php echo $password; ?></b><br/></p>
+<hr/>
+<p><?php echo Setting::get('ooo'); ?><br/>
++7 <?php echo Setting::get('tel1'); ?><br/>
++7 <?php echo Setting::get('tel2'); ?><br/>
+</p>

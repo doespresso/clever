@@ -26,7 +26,7 @@ return array(
             'title' => 'Компания/Персона',
         ),
         'user' => array(
-            'title' => 'Пользователь/e-mail',
+            'title' => 'Пользователь-заказчик',
             'relationship' => 'owner',
             'select' => '(:table).email',
         ),
@@ -41,6 +41,7 @@ return array(
 
 	'filters' => array(
 		'id',
+		'created_at'
 	),
 
 	/**
@@ -56,7 +57,8 @@ return array(
         ),
         'owner' => array(
             'type' => 'relationship',
-            'name_field' => 'email',
+            'name_field' => 'company',
+            'title' => 'Пользователь-заказчик',
         ),
 	),
 

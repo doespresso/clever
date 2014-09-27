@@ -11,7 +11,7 @@
         <div class="col-md-3">
           <span class="glyphicon glyphicon-iphone bigico"></span><br />
           <div class="contact-phones">
-            <h3>+7 {{Setting::get('tel1');}}<br />+7 {{Setting::get('tel2');}}</h3>
+            <h3>+7 {{Setting::get('tel1');}}<br />@if(Setting::get('tel2'))+7 {{Setting::get('tel2');}}@endif</h3>
             <p>{{Setting::get('time');}}</p>
           </div>
         </div>

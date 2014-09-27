@@ -10,7 +10,7 @@
         <div class="col-md-3">
           <span class="glyphicon glyphicon-iphone bigico"></span><br />
           <div class="contact-phones">
-            <h3>+7 <?php echo Setting::get('tel1');; ?><br />+7 <?php echo Setting::get('tel2');; ?></h3>
+            <h3>+7 <?php echo Setting::get('tel1');; ?><br /><?php if(Setting::get('tel2')): ?>+7 <?php echo Setting::get('tel2');; ?><?php endif; ?></h3>
             <p><?php echo Setting::get('time');; ?></p>
           </div>
         </div>

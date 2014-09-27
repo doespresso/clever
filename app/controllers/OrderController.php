@@ -158,7 +158,7 @@ class OrderController extends \BaseController
             $order = new Order;
             $info='';
             foreach ($fs as $key => $f) {
-                $info .= $fs[$key]['title'].': '.$input[$key].PHP_EOL;
+                $info .= ' | '.$fs[$key]['title'].': '.$input[$key].PHP_EOL;
             }
             $order->info = $info;
             $order->type = Setting::get('docs.' . $type.'.title');
