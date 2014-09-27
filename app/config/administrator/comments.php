@@ -63,7 +63,6 @@ return array(
 	 */
 	'edit_fields' => array(
         'service' => array(
-            'title' => 'State',
             'type' => 'relationship',
             'name_field' => 'name',
         ),

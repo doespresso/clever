@@ -25,11 +25,31 @@
   padding:@gap;
   z-index:10000;
   display:none;
+  overflow-y:auto;
 }
 
 
 .doc-form{
-  input[type='text']{
-    border-bottom: 2px @brand-primary solid;
+  .controls{
+    padding:@gap*2 0;
   }
+  input[type='text']{
+    position:relative;
+    border-bottom: 2px @brand-primary solid;
+    &.error{
+      border-color:@link-color-active;
+    }
+    &.required{
+      &:after{
+        content:'*';
+        color:red;
+        font-size:20px;
+        position:absolute;
+        z-index:10000;
+        right:5px;
+        top:5px;
+      }
+    }
+  }
+p>span{padding:@gap/6 @gap/2; background-color:@brand-bg;}
 }

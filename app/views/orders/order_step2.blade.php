@@ -3,28 +3,25 @@
         <h1>{{$d['title']}}</h1>
         <?php $fields = $d['fields'];?>
         <p class="lead">{{$d['description']}}</p>
+        <div class="order-params">
+            @foreach($fields as $key =>$f)
+            <li>{{$f['title']}}: <b>{{Input::get($key)}}</b></li>
+            @endforeach
+        </div>
         <div class="doc-form">
             {{Form::open(array('id'=>'order_params','url' => 'order','method' => 'post','role' => 'form')) }}
-            @foreach ($fields as $key => $f)
-            @if(isset($f['type']) && $f['type']=='text')
             <div class="form-group">
-                {{Form::text($key, null, array('class'=>'form-control input-block','placeholder'=>$f["title"]))}}
+            {{Form::text('fio', null, array('class'=>'form-control input-block','placeholder'=>'ФИО'))}}
             </div>
-            @else
             <div class="form-group">
-                <select>
-                    @foreach ($f as $option)
-                    <option>{{$option['title']}} - {{$option['price']}} руб</option>
-                    @endforeach
-                </select>
+            {{Form::text('phone', null, array('class'=>'form-control input-block','placeholder'=>'+7 ...'))}}
             </div>
-            @endif
-            @endforeach
-            <hr/>
             <div class="form-group">
-                {{Form::submit('Продолжить',$attributes = array('class'=>'btn btn-primary pull-right','id'=>'order_next'))}}
+            {{Form::text('email', null, array('class'=>'form-control input-block','placeholder'=>'e-mail'))}}
             </div>
-
+            <div class="form-group">
+                {{Form::submit('Отправить',$attributes = array('class'=>'btn btn-primary pull-right','id'=>'order_finish'))}}
+            </div>
             {{Form::close()}}
         </div>
     </div>
