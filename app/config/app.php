@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -27,9 +27,9 @@ return array(
 	*/
 
 //	'url' => 'http://'.$_SERVER['HTTP_HOST'],
-	'url' => 'localhost',
+//	'url' => 'localhost',
 //    'asset_url' => 'http://'.$_SERVER['HTTP_HOST'].'/assets',
-    'asset_url' => 'localhost/assets',
+//    'asset_url' => 'localhost/assets',
 
 	/*
 	|--------------------------------------------------------------------------
